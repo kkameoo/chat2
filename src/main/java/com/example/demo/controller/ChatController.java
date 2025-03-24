@@ -25,11 +25,13 @@ import lombok.RequiredArgsConstructor;
 public class ChatController {
 	
 	private final MessageService messageService;
+	private final ChatService chatService;
 
     @MessageMapping("/chat")
-    @SendTo("/topic/chat")
-    public MessageResponseDto sendChatMessage(MessageRequestDto requestDto) {
-        return messageService.processMessage(requestDto);
+    @SendTo("/topic/messages")
+    public ChatMessage sendChatMessage(ChatMessage chatMessage) {
+    	chatService.sendMessage("topic/chat", chatMessage.getContent());
+        return chatMessage;
     }
 	
 }

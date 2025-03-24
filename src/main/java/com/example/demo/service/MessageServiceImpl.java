@@ -9,8 +9,8 @@ public class MessageServiceImpl implements MessageService{
 	
 	@Override
 	public MessageResponseDto processMessage(MessageRequestDto requestDto) {
+		System.out.println(requestDto.getContent());
+		System.out.println(requestDto.getSender());
 		return new MessageResponseDto(requestDto.getContent());
 	}
-
-	
 }
