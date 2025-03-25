@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.ChatMessage;
 import com.example.demo.dto.ChatRoom;
-import com.example.demo.dto.MessageRequestDto;
-import com.example.demo.dto.MessageResponseDto;
 import com.example.demo.service.ChatService;
-import com.example.demo.service.MessageService;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -24,7 +22,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ChatController {
 	
-	private final MessageService messageService;
 	private final ChatService chatService;
 
     @MessageMapping("/chat")
